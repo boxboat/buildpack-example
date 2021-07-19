@@ -21,7 +21,7 @@ pack --version
 
 Using the [Google Cloud Platform general builder](https://github.com/GoogleCloudPlatform/buildpacks) we can easily create
 a Docker image for our application without the need for a Dockerfile.<br>
-Using `pack` and the GCP builder we can build a Docker image for the above run-times using the following command:
+Using `pack` and the GCP builder we can build a Docker image using the following command:
 ```shell
 pack build <docker-image-name> --path=<path-to-app-source> --builder=gcr.io/buildpacks/builder:v1 -e GOOGLE_ENTRYPOINT=<desired-docker-entrypoint-command>
 ```
