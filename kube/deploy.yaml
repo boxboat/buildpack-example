@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: buildpack-example
+  name: buildpack-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: buildpack-example
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: buildpack-example
+    spec:
+      containers:
+      - image: k3d-myregistry.localhost:12345/groovy-spring-app:local
+        name: groovy-spring-app
+        ports:
+        - name: groovy-port
+          containerPort: 8000
+      - image: k3d-myregistry.localhost:12345/gradle-spring-app:local
+        name: gradle-spring-app
+        ports:
+        - name: gradle-port
+          containerPort: 8001
+      - image: k3d-myregistry.localhost:12345/maven-spring-app:local
+        name: maven-spring-app
+        ports:
+        - name: maven-port
+          containerPort: 8002
+      - image: k3d-myregistry.localhost:12345/fastapi-app:local
+        name: fastapi-app
+        ports:
+        - name: fastapi-port
+          containerPort: 8003
+status: {}
