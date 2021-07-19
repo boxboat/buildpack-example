@@ -83,5 +83,5 @@ Reach out if you have any questions/concerns about this example project. Looking
 * [Official Buildpack Documentation](https://buildpacks.io/docs/)
 * [Pack Installation](https://buildpacks.io/docs/tools/pack/)
 * [Google Cloud Platform general builder](https://github.com/GoogleCloudPlatform/buildpacks)
-* [k3d](https://k3d.io/) ]
+* [k3d](https://k3d.io/) 
 * [prop-pack.bash unmodified source code](https://gist.github.com/dsm0014/c31ed0109a2d0da4956f7c1561bc1ef5)
