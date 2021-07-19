@@ -45,13 +45,13 @@ Next we need to create a cluster and registry for this example using a helper sc
 sh cluster-with-registry.sh
 ```
 
-Now we're ready to use `pack-prop.bash` to build all the Docker images in this example, and push them to our local Docker registry. <br>
+Now we're ready to use `prop-pack.bash` to build all the Docker images in this example, and push them to our local Docker registry. <br>
 This helper script accepts an array of paths to project source directories as input, and uses Buildpacks to create Docker images based on configurations in 'buildpack.properties' files.
 The [prop-pack.bash unmodified source code](https://gist.github.com/dsm0014/c31ed0109a2d0da4956f7c1561bc1ef5) can be easily modified to fit your needs.
 ```shell
-bash pack-prop.bash groovy/groovy-spring java/gradle-spring java/maven-spring
+bash prop-pack.bash groovy/groovy-spring java/gradle-spring java/maven-spring
 ```
-> :warning: **Make sure to use bash 4.0+** with `pack-prop.bash` as it relies on associative arrays for reading from property files.
+> :warning: **Make sure to use bash 4.0+** with `prop-pack.bash` as it relies on associative arrays for reading from property files.
 
 Notice how the GCP builder is able to detect what files contain the configuration for each language/run-time and appropriately 
 build and test the application before creating our application Docker image. 
