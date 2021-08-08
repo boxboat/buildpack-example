@@ -1,0 +1,14 @@
+[project]
+id = "com.boxboat.fastapi-app"
+name = "Fast API Example Application"
+version = "1.0.0"
+
+[build]
+exclude = [
+    "README.md",
+    ".pytest-cache"
+]
+
+[[build.env]]
+name='GOOGLE_ENTRYPOINT'
+value='uvicorn --port 8003 --host 0.0.0.0 fastapi_app.health_controller:app'
