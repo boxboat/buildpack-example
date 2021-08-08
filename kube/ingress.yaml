@@ -1,9 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: groovy-ingress
+  name: buildpack-ingress
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   rules:
     - http:
@@ -14,25 +14,25 @@ spec:
             service:
               name: buildpack-example-svc
               port:
-                number: 8000
+                number: 4000
         - path: /java/gradle
           pathType: Prefix
           backend:
             service:
               name: buildpack-example-svc
               port:
-                number: 8001
+                number: 4010
         - path: /java/maven
           pathType: Prefix
           backend:
             service:
               name: buildpack-example-svc
               port:
-                number: 8002
+                number: 4020
         - path: /python
           pathType: Prefix
           backend:
             service:
               name: buildpack-example-svc
               port:
-                number: 8003
+                number: 4030

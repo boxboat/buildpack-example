@@ -11,4 +11,4 @@ exclude = [
 
 [[build.env]]
 name='GOOGLE_ENTRYPOINT'
-value='uvicorn --port 8003 --host 0.0.0.0 fastapi_app.health_controller:app'
+value='uvicorn --port 8000 --host 0.0.0.0 fastapi_app.health_controller:app'

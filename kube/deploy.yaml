@@ -17,6 +17,7 @@ spec:
       labels:
         app: buildpack-example
     spec:
+      replicas: 2
       containers:
       - image: k3d-myregistry.localhost:12345/com.boxboat.groovy-spring-app:local
         name: groovy-spring-app
@@ -27,15 +28,15 @@ spec:
         name: gradle-spring-app
         ports:
         - name: gradle-port
-          containerPort: 8001
+          containerPort: 8000
       - image: k3d-myregistry.localhost:12345/com.boxboat.maven-spring-app:local
         name: maven-spring-app
         ports:
         - name: maven-port
-          containerPort: 8002
+          containerPort: 8000
       - image: k3d-myregistry.localhost:12345/com.boxboat.fastapi-app:local
         name: fastapi-app
         ports:
         - name: fastapi-port
-          containerPort: 8003
+          containerPort: 8000
 status: {}

@@ -9,19 +9,19 @@ spec:
   type: ClusterIP
   ports:
   - name: groovy-spring-app
-    port: 8000
+    port: 4000
     protocol: TCP
     targetPort: groovy-port
   - name: gradle-spring-app
-    port: 8001
+    port: 4010
     protocol: TCP
     targetPort: gradle-port
   - name: maven-spring-app
-    port: 8002
+    port: 4020
     protocol: TCP
     targetPort: maven-port
   - name: fastapi-app
-    port: 8003
+    port: 4030
     protocol: TCP
     targetPort: fastapi-port
   selector:
