@@ -17,7 +17,6 @@ spec:
       labels:
         app: buildpack-example
     spec:
-      replicas: 2
       containers:
       - image: k3d-myregistry.localhost:12345/com.boxboat.groovy-spring-app:local
         name: groovy-spring-app
