@@ -4,8 +4,8 @@
 build_and_push() {
     img=$(grep '^id\s*=' ./project.toml | sed 's/^.*"\([^"]*\)".*$/\1/')
 
-    pack build "k3d-myregistry.localhost:12345/$img:local" --builder=gcr.io/buildpacks/builder:v1  --path=.
-    docker push "k3d-myregistry.localhost:12345/$img:local"
+    pack build "127.0.0.1:12345/$img:local" --builder=gcr.io/buildpacks/builder:v1  --path=.
+    docker push "127.0.0.1:12345/$img:local"
 }
 
 
