@@ -1,0 +1,14 @@
+[project]
+id = "com.boxboat.groovy-spring-app"
+name = "Groovy Spring Example Application"
+version = "1.0.0"
+
+[build]
+exclude = [
+    "README.md",
+    "build"
+]
+
+[[build.env]]
+name='GOOGLE_ENTRYPOINT'
+value='./gradlew bootRun'
