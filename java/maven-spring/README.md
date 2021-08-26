@@ -1,20 +1,15 @@
-# Python FastAPI Example
-A basic Python FastAPI application.
+# Maven Spring Example
+A basic Maven-backed Java Spring Boot application.
 
 ## Running the Application
-Install the application dependencies with the following:
+This application includes a maven wrapper, and can be started from the `maven-spring` directory with the following command:
 ```shell
-pip install -r requirements.txt
+./mvnw bootRun
 ```
 
-You should then be able to start the FastAPI application from the `fastapi` directory using the following:
+The Tomcat server will start, and the application's endpoint can be accessed at the following address:
 ```shell
-uvicorn --port 8003 --host 0.0.0.0 fastapi_app.health_controller:app
-```
-
-The server will start, and the application's endpoint can be accessed at the following address:
-```shell
-localhost:8003/python/health
+localhost:8002/java/maven/health
 ```
 
 ##  Building an OCI with Google's general builder and Buildpacks
@@ -25,25 +20,24 @@ pack --version
 
 Using the [Google Cloud Platform general builder](https://github.com/GoogleCloudPlatform/buildpacks) we can easily create
 a docker image for our application without the need for a Dockerfile.<br>
-The following command will scan our project, determine that it is a Python application, and create an appropriate
+The following command will scan our project, determine that it is a Maven-backed Java application, and create an appropriate
 docker image using environment variables specified in our project's `project.toml`:
 ```shell
-pack build python-fastapi-app --path=. --builder=gcr.io/buildpacks/builder:v1
+pack build maven-spring-app --path=. --builder=gcr.io/buildpacks/builder:v1
 ```
 
 That's it! Now we can use the `maven-spring-app` image that was created:
 ```shell
-docker run -p 8000:8000 python-fastapi-app:latest 
+docker run -p 7000:8000 maven-spring-app:latest 
 ```
 
 After a moment, the application will have started and can be validated with a quick curl:
 ```shell
-curl localhost:8000/python/health
+curl localhost:7000/java/maven/health
 ```
 
 ## Reference Documentation
 
-* [Official Python FastAPI documentation](https://fastapi.tiangolo.com/)
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Google Cloud Platform general builder](https://github.com/GoogleCloudPlatform/buildpacks)
 * [Buildpack documentation](https://buildpacks.io/docs)
-
