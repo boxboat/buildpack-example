@@ -65,10 +65,10 @@ kubectl apply -f kube
 
 After a moment, we can validate that our services are running using the Docker images created with basic curl commands:
 ```shell
-curl localhost:4545/groovy/health
-curl localhost:4545/java/gradle/health
-curl localhost:4545/java/maven/health
-curl localhost:4545/python/health
+curl localhost:4000/groovy/health
+curl localhost:4000/java/gradle/health
+curl localhost:4000/java/maven/health
+curl localhost:4000/python/health
 ```
 
 ## Afterwards
