@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: buildpack-ingress
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "true"
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
     - http:

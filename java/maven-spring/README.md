@@ -28,7 +28,7 @@ pack build maven-spring-app --path=. --builder=gcr.io/buildpacks/builder:v1
 
 That's it! Now we can use the `maven-spring-app` image that was created:
 ```shell
-docker run -p 7000:8000 maven-spring-app:latest 
+docker run -p 7000:8020 maven-spring-app:latest 
 ```
 
 After a moment, the application will have started and can be validated with a quick curl:
